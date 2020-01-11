@@ -19,6 +19,7 @@ fi
 DATE=$(date '+%Y%m%d%H%M%S')
 BACKUP_FILENAME="/tmp/all_$DATE.sql.gz"
 
+psql -h $DB_HOST -U $DB_USER -l
 pg_dumpall -h $DB_HOST -U $DB_USER | pigz > $BACKUP_FILENAME
 
 echo "INFO: start rclone"

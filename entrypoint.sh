@@ -9,7 +9,7 @@ else
   exit 1
 fi
 
-if [[ -z $DB_HOST ]] || [[ -z $DB_USER ]] || [[ -z $DB_PASS ]] || [[ -z $TARGET_DIR ]]; then
+if [[ -z $DB_HOST ]] || [[ -z $DB_USER ]] || [[ -z $TARGET_DIR ]]; then
   echo "Environment variables are not defined"
   exit 1
 fi
