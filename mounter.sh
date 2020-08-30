@@ -18,6 +18,7 @@ fi
 
 DATE=$(date '+%Y%m%d%H%M%S')
 BACKUP_DIR="/tmp/$DATE"
+TARGET_PATH="${TARGET_DIR}/${DATE}"
 
 mkdir -p $BACKUP_DIR
 
@@ -39,9 +40,9 @@ done
 
 echo "INFO: start rclone"
 
-rclone copy $BACKUP_DIR gdrive:$TARGET_DIR
+rclone copy $BACKUP_DIR gdrive:$TARGET_PATH
 
-echo "INFO: complete copy $BACKUP_DIR to $TARGET_DIR/$DATE"
+echo "INFO: complete copy $BACKUP_DIR to $TARGET_PATH"
 
 echo "INFO: Remove $BACKUP_DIR"
 
