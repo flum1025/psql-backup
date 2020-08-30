@@ -38,6 +38,8 @@ do
   done
 done
 
+pg_dumpall $psql_opt --roles-only > "${BACKUP_DIR}/roles.sql"
+
 echo "INFO: start rclone"
 
 rclone copy $BACKUP_DIR gdrive:$TARGET_PATH
