@@ -33,7 +33,7 @@ do
   for table in $(psql $psql_opt -t -c "$psql_show_table" $database)
   do
     echo "INFO: dumping ${database}.${table}"
-    pg_dump $psql_opt -Fc -t $table $database > "${BACKUP_DIR}/${database}_${table}.dump"
+    pg_dump $psql_opt -Fc --compress 9 -t $table $database > "${BACKUP_DIR}/${database}_${table}.dump"
   done
 done
 
